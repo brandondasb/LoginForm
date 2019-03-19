@@ -6,6 +6,7 @@ public interface Contract {
         void  hideProgressBar();
         void onSuccess();
         void onFailed(String message);
+
          // we will implement this in the view (login activity)
     }
     interface  LoginListener{

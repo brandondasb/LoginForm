@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,9 +10,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="login succes"
-        android:textSize="16dp"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="231dp"
-        tools:ignore="MissingConstraints" />
+        android:textSize="16dp" />
+    <!-- Main content>-->
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_bottom_navigation_bar">
+
+    </android.support.design.widget.BottomNavigationView>
+
+
+</RelativeLayout>

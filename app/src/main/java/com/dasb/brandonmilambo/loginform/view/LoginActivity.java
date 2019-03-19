@@ -35,6 +35,8 @@ import android.widget.Toast;
 import com.dasb.brandonmilambo.loginform.Contract;
 import com.dasb.brandonmilambo.loginform.LoginPresenter;
 import com.dasb.brandonmilambo.loginform.R;
+import com.dasb.brandonmilambo.loginform.customViews.AuthenticationDialog;
+import com.dasb.brandonmilambo.loginform.interfaces.AuthenticationListener;
 import com.dasb.brandonmilambo.loginform.model.LoginCredentials;
 
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements Contract.LoginView {
+public class LoginActivity extends AppCompatActivity implements Contract.LoginView, AuthenticationListener {
 
 
     // UI references.
@@ -53,8 +55,12 @@ public class LoginActivity extends AppCompatActivity implements Contract.LoginVi
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+
+    //presenter and model ini
     private ProgressDialog progressDialog;
     private LoginPresenter presenter;
+    //Instagram
+    private AuthenticationDialog auth_dialog;
 
 
     @Override
@@ -104,6 +110,21 @@ public class LoginActivity extends AppCompatActivity implements Contract.LoginVi
     public void onFailed(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
+    }
+
+    @Override
+    public void onTokenReceived(String auth_token) {
+
+        if (auth_token ==null){
+            return;
+            //use the token for further
+        }
+    }
+
+    public void after_click_login(View view) {
+        auth_dialog = new AuthenticationDialog(this,this);
+        auth_dialog.setCancelable(true);
+        auth_dialog.show();
     }
 }
 
