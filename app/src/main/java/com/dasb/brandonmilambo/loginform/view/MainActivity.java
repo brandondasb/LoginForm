@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
 
             for (int i = 0; i < backStackSize; i++) {
                 FragmentManager.BackStackEntry backStackEntry = fragmentManager.getBackStackEntryAt(i);
-
                 if (existingFragment.getClass().getName().equals(backStackEntry.getName())) {
                     result = false;
                     break;
@@ -147,17 +146,12 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }
 
-    private FragmentManager.OnBackStackChangedListener getBackStackChangedListener() {
-
-        return new FragmentManager.OnBackStackChangedListener() {
-            @Override
-            public void onBackStackChanged() {
-                Fragment currentBackstackFragment = getSupportFragmentManager().findFragmentByTag("CurrentFrag");
-                if (currentBackstackFragment instanceof Fragment) {
-                }
-
-            }
-        };
+    @Override
+    public void onBackPressed() {
+        if (fragmentManager.getBackStackEntryCount() > 1) {
+            fragmentManager.popBackStack(HomeFragment.class.getName(), 0);
+        } else {
+            this.finish();
+        }
     }
-
 }
