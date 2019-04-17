@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         homeFragment.setUpdateBottomNavListener(bottomNavListener);
 
         fragmentTransaction.replace(R.id.fragment_container, homeFragment).commit();
-
-
     }
 
     @Override
@@ -84,13 +82,11 @@ public class MainActivity extends AppCompatActivity {
                             }
                             break;
                         case R.id.nav_visits:
-
                             if (fragmentManager.findFragmentByTag(VisitsFragment.class.getName()) != null) {
                                 selectedFragment = (VisitsFragment) fragmentManager.findFragmentByTag(VisitsFragment.class.getName());
                             } else {
                                 selectedFragment = new VisitsFragment();
                             }
-
                             break;
                         case R.id.nav_inbox:
                             if (fragmentManager.findFragmentByTag(InboxFragment.class.getName()) != null) {
@@ -120,17 +116,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean loadFragment(final BaseNavFragment fragment) {
-        if (fragment != null) {
-
+        if (isNotInBackStack(fragmentManager, fragment)) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, fragment, fragment.getClass().getName())
                     .addToBackStack(fragment.getClass().getName())
-                    .commit();
-            return true;
+                    .commitAllowingStateLoss();
+        } else {
+            fragmentManager.popBackStack(fragment.getClass().getName(), 0);
         }
-        return false;
+        return true;
+    }
 
+    public static boolean isNotInBackStack(FragmentManager fragmentManager, Fragment existingFragment) {
+        boolean result = true;
+
+        if (existingFragment != null) {
+            int backStackSize = fragmentManager.getBackStackEntryCount();
+
+            for (int i = 0; i < backStackSize; i++) {
+                FragmentManager.BackStackEntry backStackEntry = fragmentManager.getBackStackEntryAt(i);
+
+                if (existingFragment.getClass().getName().equals(backStackEntry.getName())) {
+                    result = false;
+                    break;
+                }
+            }
+        }
+
+        return result;
     }
 
     private FragmentManager.OnBackStackChangedListener getBackStackChangedListener() {
