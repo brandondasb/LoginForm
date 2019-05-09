@@ -1,9 +1,14 @@
 package com.dasb.brandonmilambo.loginform.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class GsonTeam {
     private int id;
     private String name;
+
+    @SerializedName("crestUrl")
     private String crestURL;
+
 
     public int getId() {
         return id;
