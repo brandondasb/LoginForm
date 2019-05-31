@@ -14,9 +14,11 @@ import com.dasb.brandonmilambo.loginform.interfaces.StandingCallback;
 import com.dasb.brandonmilambo.loginform.interfaces.UpdateBottomNavListener;
 import com.dasb.brandonmilambo.loginform.model.BottomNavState;
 import com.dasb.brandonmilambo.loginform.model.GsonStandingsResponse;
+import com.dasb.brandonmilambo.loginform.presenter.HomeStandingPresenter;
 import com.dasb.brandonmilambo.loginform.repo.FootballDataRepo;
 
 public class HomeFragment extends BaseNavFragment {
+    private HomeStandingPresenter homeStandingPresenter;
 
     @Nullable
     @Override
@@ -29,15 +31,18 @@ public class HomeFragment extends BaseNavFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         updateBottomNavListener.updateBottomNav(BottomNavState.HOME);
+        homeStandingPresenter = new HomeStandingPresenter(view);
+
 
         FootballDataRepo footballDataRepo = new FootballDataRepo();
-        footballDataRepo.getStandingFordId("2021",standingCallback);
+        footballDataRepo.getStandingFordId("2021", standingCallback);
     }
-    private StandingCallback  standingCallback = new StandingCallback() {
+
+    private StandingCallback standingCallback = new StandingCallback() {
 
         @Override
         public void loadStandingData(GsonStandingsResponse response) {
-
+            homeStandingPresenter.Load(response.getStandings().get(0).getTable());
         }
     };
 }
