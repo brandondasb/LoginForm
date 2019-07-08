@@ -31,6 +31,7 @@ public class HomeFragment extends BaseNavFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         updateBottomNavListener.updateBottomNav(BottomNavState.HOME);
+
         homeStandingPresenter = new HomeStandingPresenter(view);
 
 
