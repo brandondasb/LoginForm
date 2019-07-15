@@ -30,8 +30,8 @@ public class FootballDataRepo {
 
     }
 
-    public void getStandingFordId(String id, final StandingCallback standingCallback) {
-        footballApi.getStandings(id).enqueue(new Callback<GsonStandingsResponse>() {
+    public void getStandingFordId(String id, String season, final StandingCallback standingCallback) {
+        footballApi.getStandings(id, season).enqueue(new Callback<GsonStandingsResponse>() {
             @Override
             public void onResponse(Call<GsonStandingsResponse> call, retrofit2.Response<GsonStandingsResponse> response) {
                 if (response.isSuccessful()) {

@@ -36,7 +36,7 @@ public class HomeFragment extends BaseNavFragment {
 
 
         FootballDataRepo footballDataRepo = new FootballDataRepo();
-        footballDataRepo.getStandingFordId("2021", standingCallback);
+        footballDataRepo.getStandingFordId("2021", "2018" ,standingCallback);
     }
 
     private StandingCallback standingCallback = new StandingCallback() {
