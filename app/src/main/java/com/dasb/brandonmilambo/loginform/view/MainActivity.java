@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment homeFragment = new HomeFragment();
         homeFragment.setUpdateBottomNavListener(bottomNavListener);
 
+
         fragmentTransaction.replace(R.id.fragment_container, homeFragment).commit();
     }
 
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    //create  listen for bottom navigation
+    //create  listener for bottom navigation
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
 

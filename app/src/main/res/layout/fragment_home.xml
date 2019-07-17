@@ -1,11 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/holo_red_light"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <android.support.design.widget.CollapsingToolbarLayout
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.design.widget.CollapsingToolbarLayout>
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:elevation="40dp">
+
+        <TextView
+            android:id="@+id/positionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/nameTextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/positionTV"
+            app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/Club"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <TextView
+            android:id="@+id/matchPlayedTextviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/wonTextviewTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/MP"
+            />
+
+        <TextView
+            android:id="@+id/wonTextviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/lostTextviewTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/matchPlayedTextviewTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/W"  />
+
+        <TextView
+            android:id="@+id/lostTextviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/drawTextviewTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/wonTextviewTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/L"  />
+
+        <TextView
+            android:id="@+id/drawTextviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/pointsTextviewTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lostTextviewTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/D"  />
+
+
+        <TextView
+            android:id="@+id/pointsTextviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/drawTextviewTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/P" />
+        ></android.support.constraint.ConstraintLayout>
+
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
@@ -14,4 +101,4 @@
 
 
 
-</RelativeLayout>
+</LinearLayout>

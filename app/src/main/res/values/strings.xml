@@ -20,4 +20,15 @@
     <string name="profile">profile</string>
     <string name="inbox">inbox</string>
     <string name="visits">visits</string>
+
+    ///top nav for table
+    <string name="Club">Club</string>
+    <string name="MP">MP</string>
+    <string name="W">W</string>
+    <string name="L">L</string>
+    <string name="D">D</string>
+    <string name="P">P</string>
+
+
+
 </resources>
