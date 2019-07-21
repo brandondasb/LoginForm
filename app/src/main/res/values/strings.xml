@@ -29,6 +29,12 @@
     <string name="D">D</string>
     <string name="P">P</string>
 
+// spinner content
+    <string-array name="season">
+        <item>current season</item>
+        <item>last season</item>
+    </string-array>
+
 
 
 </resources>
