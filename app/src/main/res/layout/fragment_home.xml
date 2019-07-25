@@ -7,18 +7,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/spinnerSeason"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="16dp" />
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:elevation="50dp">
+        <TextView
+            android:id="@+id/tv_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select season" />
 
+        <Spinner
+            android:id="@+id/spinnerSeason"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="16dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_spinner"
+            />
         <TextView
             android:id="@+id/positionTV"
             android:layout_width="wrap_content"
