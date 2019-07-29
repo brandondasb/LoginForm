@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.dasb.brandonmilambo.loginform.R;
+
 import com.dasb.brandonmilambo.loginform.api.FootballDataApi;
 import com.dasb.brandonmilambo.loginform.interfaces.StandingCallback;
 import com.dasb.brandonmilambo.loginform.interfaces.UpdateBottomNavListener;
