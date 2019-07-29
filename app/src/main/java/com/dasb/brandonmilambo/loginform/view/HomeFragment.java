@@ -3,7 +3,7 @@ package com.dasb.brandonmilambo.loginform.view;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-
-import com.dasb.brandonmilambo.loginform.api.FootballDataApi;
+import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.interfaces.StandingCallback;
-import com.dasb.brandonmilambo.loginform.interfaces.UpdateBottomNavListener;
 import com.dasb.brandonmilambo.loginform.model.BottomNavState;
 import com.dasb.brandonmilambo.loginform.model.GsonStandingsResponse;
 import com.dasb.brandonmilambo.loginform.presenter.HomeStandingPresenter;
@@ -29,7 +27,7 @@ public class HomeFragment extends BaseNavFragment implements AdapterView.OnItemS
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-
+        Log.e("###", "Test log for commit");
         return inflater.inflate(R.layout.fragment_home, container, false);
 
     }
