@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.adapters.HomeStandingRecycleViewAdapter;
@@ -27,19 +26,47 @@ public class HomeStandingPresenter {
     private HomeFragment homeFragment;
     private HomeStandingPresenterListener homeStandingPresenterListener;
 
+    /**
+     * create constuctor for the presenter and pass in the View and the listener as parameters.
+     * @param view
+     * @param listener
+     *
+     */
     public HomeStandingPresenter(View view, HomeStandingPresenterListener listener) {
         viewHolder = new HomeFragmentViewHolder(view);
         context = view.getContext();
-        this.homeStandingPresenterListener = listener; // is this the correct way
+        this.homeStandingPresenterListener = listener;
+        configureSpinner();
     }
 
+    /**
+     * Load method  loads the list of gson standing,
+     * user viewHolder to get recyclerView
+     * set layout manager
+     * pass list of teams to the recycleView adapter.
+     * pass the adapter to the recycleView.
+     * @param teamStandings
+     */
     public void Load(List<GsonTeamStandings> teamStandings) {
+
 
         viewHolder.getRecyclerView().setLayoutManager(new LinearLayoutManager(context));
         final HomeStandingRecycleViewAdapter homeStandingRecycleViewAdapter = new HomeStandingRecycleViewAdapter(context, teamStandings);
         viewHolder.getRecyclerView().setAdapter(homeStandingRecycleViewAdapter);
 
-        //spinner  listener
+    }
+
+    /**Repopulate the data every time the item is selected.
+     * setting up the Spinner,
+     * assign array
+     * link to XML layout
+     * access spinner from viewholder, set adapter
+     * Set onclick listener on the spinner.
+     * implement thhe spinner methods
+     * call presenter and return the current position
+     */
+    private void configureSpinner() {
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, R.array.season, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         viewHolder.getSpinner().setAdapter(adapter);

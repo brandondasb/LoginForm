@@ -58,8 +58,9 @@ class HomeFragmentListener implements HomeStandingPresenterListener {
 
     //private repo
     private FootballDataRepo footballDataRepo;
-    private StandingCallback standingCallback;
     //callback
+    private StandingCallback standingCallback;
+
 
     public HomeFragmentListener(Context context, FootballDataRepo repo, StandingCallback standingCallback) {
         this.context = context;
