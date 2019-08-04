@@ -48,6 +48,13 @@ public class FootballDataRepo {
         });
     }
 
+    /**
+     * attemp t make a second call pulling back match day data
+     */
+    public void getMatchDay(){
+
+    }
+
     private void configureRetroFit() {
         Gson gson = new GsonBuilder().create();
         Retrofit retrofit = new Retrofit.Builder()

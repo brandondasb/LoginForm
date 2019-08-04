@@ -11,4 +11,6 @@ import retrofit2.http.Query;
 public interface FootballDataApi {
     @GET("competitions/{id}/standings")
     Call<GsonStandingsResponse> getStandings(@Path("id") String standingId, @Query("season") String season);
+
+   // @get("competitions/{id}/matches")
 }

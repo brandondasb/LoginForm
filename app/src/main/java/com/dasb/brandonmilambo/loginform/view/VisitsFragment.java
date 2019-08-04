@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.model.BottomNavState;
+import com.dasb.brandonmilambo.loginform.repo.FootballDataRepo;
 
 public class VisitsFragment extends BaseNavFragment {
     @Nullable
@@ -21,5 +22,8 @@ public class VisitsFragment extends BaseNavFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         updateBottomNavListener.updateBottomNav(BottomNavState.VISIT);
+
+        FootballDataRepo footballDataRepo = new FootballDataRepo();
+
     }
 }

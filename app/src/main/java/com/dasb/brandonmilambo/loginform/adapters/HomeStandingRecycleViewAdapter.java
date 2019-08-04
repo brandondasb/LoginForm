@@ -37,7 +37,6 @@ public class HomeStandingRecycleViewAdapter extends RecyclerView.Adapter<TeamVie
     @Override
     public void onBindViewHolder(@NonNull TeamViewHolder teamViewHolder, int position) {
         GsonTeamStandings teamStanding = teamStandingData.get(position);
-       // String teamCrestUrl = "https://en.wikipedia.org/wiki/Wolverhampton_Wanderers_F.C.#/media/File:Wolverhampton_Wanderers.svg";
 
         String teamPosition = String.valueOf(teamStanding.getPosition());
         String teamname = teamStanding.getTeam().getName();
