@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 case HOME:
                     bottomNavigationView.setSelectedItemId(R.id.nav_home);
                     break;
-                case VISIT:
+                case MATCH:
                     bottomNavigationView.setSelectedItemId(R.id.nav_visits);
                     break;
                 case INBOX:
@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
                             }
                             break;
                         case R.id.nav_visits:
-                            if (fragmentManager.findFragmentByTag(VisitsFragment.class.getName()) != null) {
-                                selectedFragment = (VisitsFragment) fragmentManager.findFragmentByTag(VisitsFragment.class.getName());
+                            if (fragmentManager.findFragmentByTag(MatchFragment.class.getName()) != null) {
+                                selectedFragment = (MatchFragment) fragmentManager.findFragmentByTag(MatchFragment.class.getName());
                             } else {
-                                selectedFragment = new VisitsFragment();
+                                selectedFragment = new MatchFragment();
                             }
                             break;
                         case R.id.nav_inbox:

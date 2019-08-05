@@ -36,6 +36,7 @@ public class HomeFragment extends BaseNavFragment {
         updateBottomNavListener.updateBottomNav(BottomNavState.HOME);
 
 
+
         FootballDataRepo footballDataRepo = new FootballDataRepo();
         footballDataRepo.getStandingFordId("2021", "2019", standingCallback);
         Toast.makeText(this.getActivity(), "last season test", Toast.LENGTH_LONG);
