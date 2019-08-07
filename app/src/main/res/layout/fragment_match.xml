@@ -3,15 +3,18 @@
     android:background="@android:color/holo_orange_light"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="visit fragment: will display user's previously visited businesses"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        />
+        android:padding="8dp"
+        android:elevation="50dp">
 
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/match_fragment_recyclerView"/>
 
 
 </RelativeLayout>

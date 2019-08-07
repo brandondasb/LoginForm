@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import com.dasb.brandonmilambo.loginform.R;
-import com.dasb.brandonmilambo.loginform.adapters.HomeStandingRecycleViewAdapter;
+import com.dasb.brandonmilambo.loginform.adapters.HomeStandingRecyclerViewAdapter;
 import com.dasb.brandonmilambo.loginform.interfaces.HomeStandingPresenterListener;
 import com.dasb.brandonmilambo.loginform.model.GsonTeamStandings;
 import com.dasb.brandonmilambo.loginform.view.HomeFragment;
@@ -51,7 +51,7 @@ public class HomeStandingPresenter {
 
 
         viewHolder.getRecyclerView().setLayoutManager(new LinearLayoutManager(context));
-        final HomeStandingRecycleViewAdapter homeStandingRecycleViewAdapter = new HomeStandingRecycleViewAdapter(context, teamStandings);
+        final HomeStandingRecyclerViewAdapter homeStandingRecycleViewAdapter = new HomeStandingRecyclerViewAdapter(context, teamStandings);
         viewHolder.getRecyclerView().setAdapter(homeStandingRecycleViewAdapter);
 
     }

@@ -16,7 +16,6 @@ public class GsonTeamMatches {
     private GsonScore Score;
 
 
-
     private String utcDate;
     private String status;
     private String matchday;

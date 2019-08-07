@@ -13,12 +13,12 @@ import com.dasb.brandonmilambo.loginform.viewHolder.TeamViewHolder;
 
 import java.util.List;
 
-public class HomeStandingRecycleViewAdapter extends RecyclerView.Adapter<TeamViewHolder> {
+public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<TeamViewHolder> {
 
     private Context context;
     private List<GsonTeamStandings> teamStandingData;
 
-    public HomeStandingRecycleViewAdapter(Context context, List<GsonTeamStandings> teamStandingDate) {
+    public HomeStandingRecyclerViewAdapter(Context context, List<GsonTeamStandings> teamStandingDate) {
 
         this.context = context;
         this.teamStandingData = teamStandingDate;

@@ -12,7 +12,7 @@ public class HomeFragmentViewHolder {
     private Spinner spinner;
 
     /**
-     * adding all XML in a view holder so we can have the ui set created separeatly forome ui class.
+     * adding all XML in a view holder so we can have the ui set created separately from ui class.
      * @param view
      */
     public HomeFragmentViewHolder(View view) {
