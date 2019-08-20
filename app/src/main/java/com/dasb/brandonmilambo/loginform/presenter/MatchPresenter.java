@@ -21,14 +21,20 @@ public class MatchPresenter {
     private MatchFragmentViewHolder viewHolder;
 
     /**
+     * create constructor for the presenter to pass in thew View
      * @param view
-     *   need listener added
+     *  may  need listener later
      *
      * **/
     public MatchPresenter(View view) {
         context = view.getContext();
         viewHolder = new MatchFragmentViewHolder(view);
     }
+
+    /**
+     * Loag Gsonlist of matches
+     * @param matches
+     */
     public void Loadmatch(List<GsonTeamMatches> matches){
 
         viewHolder.getMatchRecyclerView().setLayoutManager(new LinearLayoutManager(context));

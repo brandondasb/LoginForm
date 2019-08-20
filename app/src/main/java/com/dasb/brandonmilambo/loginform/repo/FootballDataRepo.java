@@ -3,7 +3,9 @@ package com.dasb.brandonmilambo.loginform.repo;
 import android.util.Log;
 
 import com.dasb.brandonmilambo.loginform.api.FootballDataApi;
+import com.dasb.brandonmilambo.loginform.interfaces.MatchesCallback;
 import com.dasb.brandonmilambo.loginform.interfaces.StandingCallback;
+import com.dasb.brandonmilambo.loginform.model.GsonMatchesResponse;
 import com.dasb.brandonmilambo.loginform.model.GsonStandingsResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,9 +52,24 @@ public class FootballDataRepo {
     }
 
     /**
-     * attemp t make a second call pulling back match day data
+     * attempt make a second call pulling back matchday data
      */
-    public void getMatchDay(){
+    public void getMatchDay(String id, final MatchesCallback matchesCallback) {
+        footballApi.getMatches(id).enqueue(new Callback<GsonMatchesResponse>() {
+            @Override
+            public void onResponse(Call<GsonMatchesResponse> call, retrofit2.Response<GsonMatchesResponse> response) {
+                if (response.isSuccessful()) {
+                    matchesCallback.loadMatchesData(response.body());
+                } else {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GsonMatchesResponse> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
 
     }
 

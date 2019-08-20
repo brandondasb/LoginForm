@@ -1,6 +1,6 @@
 package com.dasb.brandonmilambo.loginform.model;
 
-class GsonScore {
+public class GsonScore {
     private String winner;
     private String duration;
 /**

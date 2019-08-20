@@ -87,7 +87,15 @@
             app:layout_constraintStart_toEndOf="@+id/drawTextview"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="37" />
-
+        <TextView
+            android:id="@+id/lastUpdatedTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/pointsTextview"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="37" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

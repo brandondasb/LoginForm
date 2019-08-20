@@ -1,5 +1,6 @@
 package com.dasb.brandonmilambo.loginform.api;
 
+import com.dasb.brandonmilambo.loginform.model.GsonMatchesResponse;
 import com.dasb.brandonmilambo.loginform.model.GsonStandings;
 import com.dasb.brandonmilambo.loginform.model.GsonStandingsResponse;
 
@@ -12,5 +13,6 @@ public interface FootballDataApi {
     @GET("competitions/{id}/standings")
     Call<GsonStandingsResponse> getStandings(@Path("id") String standingId, @Query("season") String season);
 
-   // @get("competitions/{id}/matches")
+    @GET("competitions/{id}/matches")
+    Call<GsonMatchesResponse> getMatches(@Path("id") String standingId);
 }

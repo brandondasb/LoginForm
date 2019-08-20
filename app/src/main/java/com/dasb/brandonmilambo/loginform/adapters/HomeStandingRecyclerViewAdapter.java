@@ -29,7 +29,7 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<TeamVi
     @NonNull
     @Override
     public TeamViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.list_item_team_card, viewGroup, false);// crate a view of layout
+        View view = LayoutInflater.from(context).inflate(R.layout.list_item_team_card, viewGroup, false);// create a view of layout
 
         return new TeamViewHolder(view);
     }
