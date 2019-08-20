@@ -5,8 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.dasb.brandonmilambo.loginform.adapters.MatchRecyclerViewAdapter;
-import com.dasb.brandonmilambo.loginform.model.GsonMatches;
-import com.dasb.brandonmilambo.loginform.model.GsonTeamMatches;
+import com.dasb.brandonmilambo.loginform.model.match.GsonMatch;
 import com.dasb.brandonmilambo.loginform.viewHolder.MatchFragmentViewHolder;
 
 import java.util.List;
@@ -35,10 +34,10 @@ public class MatchPresenter {
      * Loag Gsonlist of matches
      * @param matches
      */
-    public void Loadmatch(List<GsonTeamMatches> matches){
+    public void loadMatch(List<GsonMatch> matches){
 
         viewHolder.getMatchRecyclerView().setLayoutManager(new LinearLayoutManager(context));
-        final MatchRecyclerViewAdapter matchRecyclerViewAdapter = new MatchRecyclerViewAdapter(context,matches);
+        final MatchRecyclerViewAdapter matchRecyclerViewAdapter = new MatchRecyclerViewAdapter(context, matches);
         viewHolder.getMatchRecyclerView().setAdapter(matchRecyclerViewAdapter);
 
     }

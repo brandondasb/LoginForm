@@ -21,26 +21,26 @@ public class MatchViewHolder extends ViewHolder {
      **/
     private TextView scoreHomeHtime;
     private TextView scoreAwayHtime;
-    private TextView scoreHomeFtime;
-    private TextView scoreAwayFtime;
+    private TextView scoreHomeFullTime;
+    private TextView scoreAwayFullTime;
 
 
     public MatchViewHolder(@NonNull View itemView) {
         super(itemView);
-        this.matchday = itemView.findViewById(R.id.matchday);
-        this.currrentMatchday = itemView.findViewById(R.id.currentMatchdayTV);
+       // this.matchday = itemView.findViewById(R.id.na);
+        //this.currrentMatchday = itemView.findViewById(R.id);
 
-        this.status = itemView.findViewById(R.id.statusTV);
-        this.lastUpdated = itemView.findViewById(R.id.lastUpdatedTV);
-        this.hometeam = itemView.findViewById(R.id.homeTeamTV);
-        this.awayTeam = itemView.findViewById(R.id.awayTeamTV);
+      //  this.status = itemView.findViewById(R.id.statusTV);
+     //   this.lastUpdated = itemView.findViewById(R.id.lastUpdatedTV);
+        this.hometeam = itemView.findViewById(R.id.homeTeamTextView);
+        this.awayTeam = itemView.findViewById(R.id.awayTeamTextView);
 
         //score halftime
-        this.scoreHomeHtime = itemView.findViewById(R.id.scoreHomeHTTV);
-        this.scoreAwayHtime =itemView.findViewById(R.id.scoreAwayHTTV);
+      //  this.scoreHomeHtime = itemView.findViewById(R.id.scoreHomeHalfTimeTextView);
+       // this.scoreAwayHtime =itemView.findViewById(R.id.scoreAwayHalftimeTextView);
         //score FUlltime
-        this.scoreHomeFtime = itemView.findViewById(R.id.scoreHomeFTTV);
-        this.scoreAwayFtime = itemView.findViewById(R.id.scoreAwayFTTV);
+        this.scoreHomeFullTime = itemView.findViewById(R.id.scoreHomeFullTimeTextView);
+        this.scoreAwayFullTime = itemView.findViewById(R.id.scoreAwayFullTimeTextView);
 
     }
 
@@ -77,11 +77,11 @@ public class MatchViewHolder extends ViewHolder {
         return scoreAwayHtime;
     }
 
-    public TextView getScoreHomeFtime() {
-        return scoreHomeFtime;
+    public TextView getScoreHomeFullTime() {
+        return scoreHomeFullTime;
     }
 
-    public TextView getScoreAwayFtime() {
-        return scoreAwayFtime;
+    public TextView getScoreAwayFullTime() {
+        return scoreAwayFullTime;
     }
 }

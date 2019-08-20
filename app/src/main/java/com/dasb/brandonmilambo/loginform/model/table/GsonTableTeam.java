@@ -1,8 +1,8 @@
-package com.dasb.brandonmilambo.loginform.model;
+package com.dasb.brandonmilambo.loginform.model.table;
 
 import com.google.gson.annotations.SerializedName;
 
-public class GsonTeam {
+public class GsonTableTeam {
     private int id;
     private String name;
 

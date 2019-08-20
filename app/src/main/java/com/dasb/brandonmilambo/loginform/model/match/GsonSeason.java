@@ -1,4 +1,4 @@
-package com.dasb.brandonmilambo.loginform.model;
+package com.dasb.brandonmilambo.loginform.model.match;
 
 import com.google.gson.annotations.SerializedName;
 

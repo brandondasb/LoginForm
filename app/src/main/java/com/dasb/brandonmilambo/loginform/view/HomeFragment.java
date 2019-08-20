@@ -13,7 +13,7 @@ import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.interfaces.HomeStandingPresenterListener;
 import com.dasb.brandonmilambo.loginform.interfaces.StandingCallback;
 import com.dasb.brandonmilambo.loginform.model.BottomNavState;
-import com.dasb.brandonmilambo.loginform.model.GsonStandingsResponse;
+import com.dasb.brandonmilambo.loginform.model.table.GsonStandingsResponse;
 import com.dasb.brandonmilambo.loginform.presenter.HomeStandingPresenter;
 import com.dasb.brandonmilambo.loginform.repo.FootballDataRepo;
 

@@ -1,12 +1,10 @@
 package com.dasb.brandonmilambo.loginform.repo;
 
-import android.util.Log;
-
 import com.dasb.brandonmilambo.loginform.api.FootballDataApi;
 import com.dasb.brandonmilambo.loginform.interfaces.MatchesCallback;
 import com.dasb.brandonmilambo.loginform.interfaces.StandingCallback;
-import com.dasb.brandonmilambo.loginform.model.GsonMatchesResponse;
-import com.dasb.brandonmilambo.loginform.model.GsonStandingsResponse;
+import com.dasb.brandonmilambo.loginform.model.match.GsonMatchesResponse;
+import com.dasb.brandonmilambo.loginform.model.table.GsonStandingsResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

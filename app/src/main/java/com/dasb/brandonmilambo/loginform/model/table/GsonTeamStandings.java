@@ -1,8 +1,8 @@
-package com.dasb.brandonmilambo.loginform.model;
+package com.dasb.brandonmilambo.loginform.model.table;
 
 public class GsonTeamStandings {
     private int position ;
-    private GsonTeam team;
+    private GsonTableTeam team;
     private int playedGames;
     private int won;
     private int draw;
@@ -22,12 +22,12 @@ public class GsonTeamStandings {
     }
 
 
-    public GsonTeam getTeam() {
+    public GsonTableTeam getTeam() {
         return team;
     }
 
 
-    public void setTeam(GsonTeam team) {
+    public void setTeam(GsonTableTeam team) {
         this.team = team;
     }
 

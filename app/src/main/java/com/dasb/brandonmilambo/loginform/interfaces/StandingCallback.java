@@ -1,7 +1,6 @@
 package com.dasb.brandonmilambo.loginform.interfaces;
 
-import com.dasb.brandonmilambo.loginform.model.GsonMatchesResponse;
-import com.dasb.brandonmilambo.loginform.model.GsonStandingsResponse;
+import com.dasb.brandonmilambo.loginform.model.table.GsonStandingsResponse;
 
 public interface StandingCallback {
     void loadStandingData(GsonStandingsResponse response);

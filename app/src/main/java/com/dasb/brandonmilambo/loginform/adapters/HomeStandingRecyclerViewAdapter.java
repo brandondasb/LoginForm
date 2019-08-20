@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dasb.brandonmilambo.loginform.R;
-import com.dasb.brandonmilambo.loginform.model.GsonTeamStandings;
+import com.dasb.brandonmilambo.loginform.model.table.GsonTeamStandings;
 import com.dasb.brandonmilambo.loginform.viewHolder.TeamViewHolder;
 
 import java.util.List;

@@ -1,8 +1,7 @@
 package com.dasb.brandonmilambo.loginform.api;
 
-import com.dasb.brandonmilambo.loginform.model.GsonMatchesResponse;
-import com.dasb.brandonmilambo.loginform.model.GsonStandings;
-import com.dasb.brandonmilambo.loginform.model.GsonStandingsResponse;
+import com.dasb.brandonmilambo.loginform.model.match.GsonMatchesResponse;
+import com.dasb.brandonmilambo.loginform.model.table.GsonStandingsResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

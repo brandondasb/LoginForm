@@ -14,7 +14,7 @@ import android.widget.ArrayAdapter;
 import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.adapters.HomeStandingRecyclerViewAdapter;
 import com.dasb.brandonmilambo.loginform.interfaces.HomeStandingPresenterListener;
-import com.dasb.brandonmilambo.loginform.model.GsonTeamStandings;
+import com.dasb.brandonmilambo.loginform.model.table.GsonTeamStandings;
 import com.dasb.brandonmilambo.loginform.view.HomeFragment;
 import com.dasb.brandonmilambo.loginform.viewHolder.HomeFragmentViewHolder;
 

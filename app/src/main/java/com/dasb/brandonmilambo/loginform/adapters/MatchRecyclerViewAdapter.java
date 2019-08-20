@@ -8,17 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dasb.brandonmilambo.loginform.R;
-import com.dasb.brandonmilambo.loginform.model.GsonScore;
-import com.dasb.brandonmilambo.loginform.model.GsonTeamMatches;
+import com.dasb.brandonmilambo.loginform.model.match.GsonMatch;
 import com.dasb.brandonmilambo.loginform.viewHolder.MatchViewHolder;
 
 import java.util.List;
 
 public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHolder> {
     private Context context;
-    private List<GsonTeamMatches> matchesData;
+    private List<GsonMatch> matchesData;
 
-    public MatchRecyclerViewAdapter(Context context, List<GsonTeamMatches> matchesData) {
+    public MatchRecyclerViewAdapter(Context context, List<GsonMatch> matchesData) {
         this.context = context;
         this.matchesData = matchesData;
     }
@@ -38,28 +37,29 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MatchViewHolder matchViewHolder, int position) {
-        GsonTeamMatches gsonTeamMatches = matchesData.get(position);
+        GsonMatch gsonMatch = matchesData.get(position);
 
 
-        String utcDate = String.valueOf(gsonTeamMatches.getUtcDate());
-        String status = String.valueOf(gsonTeamMatches.getStatus());
-        String matchday = String.valueOf(gsonTeamMatches.getMatchday());
-        String lastUpdated= String.valueOf(gsonTeamMatches.getLastUpdated());
+        String utcDate = String.valueOf(gsonMatch.getUtcDate());
+        String status = String.valueOf(gsonMatch.getStatus());
+        String matchday = String.valueOf(gsonMatch.getMatchday());
+        String lastUpdated= String.valueOf(gsonMatch.getLastUpdated());
 
 // TBC
          List homeTeam;
          List awayTeam;
 
          //binding to view holder
-        matchViewHolder.getLastUpdated().setText(utcDate);
-        matchViewHolder.getStatus().setText(status);
-        matchViewHolder.getMatchday().setText(matchday);
-        matchViewHolder.getLastUpdated().setText(lastUpdated);
+        matchViewHolder.getHometeam().setText(gsonMatch.getHomeTeam().getName());
+        matchViewHolder.getAwayTeam().setText(gsonMatch.getAwayTeam().getName());
+        matchViewHolder.getScoreHomeFullTime().setText(String.valueOf(gsonMatch.getScore().getFullTime().getHomeTeam()));
+        matchViewHolder.getScoreAwayFullTime().setText(String.valueOf(gsonMatch.getScore().getFullTime().getAwayTeam()));
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return matchesData.size();
     }
 }

@@ -1,4 +1,4 @@
-package com.dasb.brandonmilambo.loginform.model;
+package com.dasb.brandonmilambo.loginform.model.table;
 
 import java.util.List;
 
