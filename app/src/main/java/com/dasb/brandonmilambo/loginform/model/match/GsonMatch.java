@@ -1,14 +1,13 @@
 package com.dasb.brandonmilambo.loginform.model.match;
 
 public class GsonMatch {
-
     //match ID
     private int id;
     /**
      * creating an GsonSeason object.
-     * is this how it should look?
+     *
      * I initially created a GsonSeason team class containing the @Param id,startDate,endDate,currentMatchDay:
-     * and declare the object here, is this correct?
+     *
      */
     private GsonScore score;
 
@@ -17,7 +16,9 @@ public class GsonMatch {
     private String matchday;
     private String lastUpdated;
 
+   // Creating the 3 below as separate Object due teh JSon structure
 
+    private GsonSeason gsonSeason;
     private GsonMatchTeam homeTeam;
     private GsonMatchTeam awayTeam;
 
@@ -25,6 +26,9 @@ public class GsonMatch {
         return id;
     }
 
+    public GsonSeason getGsonSeason() {
+        return gsonSeason;
+    }
 
     public GsonScore getScore() {
         return score;

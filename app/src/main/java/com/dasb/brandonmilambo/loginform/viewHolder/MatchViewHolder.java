@@ -16,37 +16,46 @@ public class MatchViewHolder extends ViewHolder {
     private TextView lastUpdated;
     private TextView hometeam;
     private TextView awayTeam;
-        /**
+
+    private TextView utcDate;
+
+    /**
      * scoreline
      **/
     private TextView scoreHomeHtime;
+
     private TextView scoreAwayHtime;
     private TextView scoreHomeFullTime;
     private TextView scoreAwayFullTime;
 
-
     public MatchViewHolder(@NonNull View itemView) {
         super(itemView);
-       // this.matchday = itemView.findViewById(R.id.na);
-        //this.currrentMatchday = itemView.findViewById(R.id);
+        this.matchday = itemView.findViewById(R.id.matchdayTextView);
+        //  this.currrentMatchday = itemView.findViewById(R.id.currentMatchdayTextView);
 
-      //  this.status = itemView.findViewById(R.id.statusTV);
-     //   this.lastUpdated = itemView.findViewById(R.id.lastUpdatedTV);
+        //  this.status = itemView.findViewById(R.id.statusTV);
+        //   this.lastUpdated = itemView.findViewById(R.id.lastUpdatedTV);
         this.hometeam = itemView.findViewById(R.id.homeTeamTextView);
         this.awayTeam = itemView.findViewById(R.id.awayTeamTextView);
 
         //score halftime
-      //  this.scoreHomeHtime = itemView.findViewById(R.id.scoreHomeHalfTimeTextView);
-       // this.scoreAwayHtime =itemView.findViewById(R.id.scoreAwayHalftimeTextView);
+        //  this.scoreHomeHtime = itemView.findViewById(R.id.scoreHomeHalfTimeTextView);
+        // this.scoreAwayHtime =itemView.findViewById(R.id.scoreAwayHalftimeTextView);
         //score FUlltime
         this.scoreHomeFullTime = itemView.findViewById(R.id.scoreHomeFullTimeTextView);
         this.scoreAwayFullTime = itemView.findViewById(R.id.scoreAwayFullTimeTextView);
 
     }
 
-    /**set getters making these properties accessible by other class. **/
+    /**
+     * set getters making these properties accessible by other class.
+     **/
     public TextView getMatchday() {
         return matchday;
+    }
+
+    public TextView getUtcDate() {
+        return utcDate;
     }
 
     public TextView getCurrrentMatchday() {

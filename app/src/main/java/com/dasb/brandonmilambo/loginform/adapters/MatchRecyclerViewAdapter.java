@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.model.match.GsonMatch;
+import com.dasb.brandonmilambo.loginform.model.match.GsonSeason;
 import com.dasb.brandonmilambo.loginform.viewHolder.MatchViewHolder;
 
 import java.util.List;
@@ -16,10 +17,14 @@ import java.util.List;
 public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHolder> {
     private Context context;
     private List<GsonMatch> matchesData;
+    private List<GsonSeason> seasonData;
+
 
     public MatchRecyclerViewAdapter(Context context, List<GsonMatch> matchesData) {
         this.context = context;
         this.matchesData = matchesData;
+
+
     }
 
     @NonNull
@@ -37,23 +42,32 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MatchViewHolder matchViewHolder, int position) {
+
         GsonMatch gsonMatch = matchesData.get(position);
+        //   GsonSeason gsonSeason = seasonData.get(position);
 
 
         String utcDate = String.valueOf(gsonMatch.getUtcDate());
         String status = String.valueOf(gsonMatch.getStatus());
         String matchday = String.valueOf(gsonMatch.getMatchday());
-        String lastUpdated= String.valueOf(gsonMatch.getLastUpdated());
+        String lastUpdated = String.valueOf(gsonMatch.getLastUpdated());
 
-// TBC
-         List homeTeam;
-         List awayTeam;
 
-         //binding to view holder
+        //binding to view holder
+        matchViewHolder.getMatchday().setText(matchday);
         matchViewHolder.getHometeam().setText(gsonMatch.getHomeTeam().getName());
         matchViewHolder.getAwayTeam().setText(gsonMatch.getAwayTeam().getName());
+        /** fullt time score**/
         matchViewHolder.getScoreHomeFullTime().setText(String.valueOf(gsonMatch.getScore().getFullTime().getHomeTeam()));
         matchViewHolder.getScoreAwayFullTime().setText(String.valueOf(gsonMatch.getScore().getFullTime().getAwayTeam()));
+        /**Halft time score **/
+        matchViewHolder.getScoreHomeFullTime().setText(String.valueOf(gsonMatch.getScore().getHalfTime().getHomeTeam()));
+        matchViewHolder.getScoreHomeFullTime().setText(String.valueOf(gsonMatch.getScore().getHalfTime().getHomeTeam()));
+
+        //
+        matchViewHolder.getUtcDate().setText(status);
+        matchViewHolder.getLastUpdated().setText(lastUpdated);
+        matchViewHolder.getStatus().setText(status);
 
 
     }

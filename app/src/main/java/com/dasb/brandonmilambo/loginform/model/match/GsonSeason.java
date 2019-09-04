@@ -2,7 +2,7 @@ package com.dasb.brandonmilambo.loginform.model.match;
 
 import com.google.gson.annotations.SerializedName;
 
-class GsonSeason {
+public class GsonSeason {
     int id;
     String startDate;
     String endDate;
@@ -15,5 +15,21 @@ class GsonSeason {
         this.startDate = startDate;
         this.endDate = endDate;
         this.currentMatchDay = currentMatchDay;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public String getCurrentMatchDay() {
+        return currentMatchDay;
     }
 }
