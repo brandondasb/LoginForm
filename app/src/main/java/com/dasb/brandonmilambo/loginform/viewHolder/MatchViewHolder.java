@@ -30,8 +30,9 @@ public class MatchViewHolder extends ViewHolder {
 
     public MatchViewHolder(@NonNull View itemView) {
         super(itemView);
+        //this.utcDate = itemView.findViewById(R.id.)
         this.matchday = itemView.findViewById(R.id.matchdayTextView);
-        //  this.currrentMatchday = itemView.findViewById(R.id.currentMatchdayTextView);
+          this.currrentMatchday = itemView.findViewById(R.id.currentMatchdayTextView);
 
         //  this.status = itemView.findViewById(R.id.statusTV);
         //   this.lastUpdated = itemView.findViewById(R.id.lastUpdatedTV);
@@ -41,7 +42,8 @@ public class MatchViewHolder extends ViewHolder {
         //score halftime
         //  this.scoreHomeHtime = itemView.findViewById(R.id.scoreHomeHalfTimeTextView);
         // this.scoreAwayHtime =itemView.findViewById(R.id.scoreAwayHalftimeTextView);
-        //score FUlltime
+
+        //score Fulltime
         this.scoreHomeFullTime = itemView.findViewById(R.id.scoreHomeFullTimeTextView);
         this.scoreAwayFullTime = itemView.findViewById(R.id.scoreAwayFullTimeTextView);
 

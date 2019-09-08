@@ -17,7 +17,6 @@ import java.util.List;
 public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHolder> {
     private Context context;
     private List<GsonMatch> matchesData;
-    private List<GsonSeason> seasonData;
 
 
     public MatchRecyclerViewAdapter(Context context, List<GsonMatch> matchesData) {
@@ -44,31 +43,32 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHold
     public void onBindViewHolder(@NonNull MatchViewHolder matchViewHolder, int position) {
 
         GsonMatch gsonMatch = matchesData.get(position);
-        //   GsonSeason gsonSeason = seasonData.get(position);
+        //GsonSeason gsonSeason = seasonData.get(position);
 
 
         String utcDate = String.valueOf(gsonMatch.getUtcDate());
         String status = String.valueOf(gsonMatch.getStatus());
         String matchday = String.valueOf(gsonMatch.getMatchday());
         String lastUpdated = String.valueOf(gsonMatch.getLastUpdated());
+      //  String currentMatchday = String.valueOf(gsonMatch.getGsonSeason().getCurrentMatchDay());
 
 
         //binding to view holder
         matchViewHolder.getMatchday().setText(matchday);
         matchViewHolder.getHometeam().setText(gsonMatch.getHomeTeam().getName());
         matchViewHolder.getAwayTeam().setText(gsonMatch.getAwayTeam().getName());
-        /** fullt time score**/
+        /** Full time score**/
         matchViewHolder.getScoreHomeFullTime().setText(String.valueOf(gsonMatch.getScore().getFullTime().getHomeTeam()));
         matchViewHolder.getScoreAwayFullTime().setText(String.valueOf(gsonMatch.getScore().getFullTime().getAwayTeam()));
-        /**Halft time score **/
+        /**Half time score**/
         matchViewHolder.getScoreHomeFullTime().setText(String.valueOf(gsonMatch.getScore().getHalfTime().getHomeTeam()));
         matchViewHolder.getScoreHomeFullTime().setText(String.valueOf(gsonMatch.getScore().getHalfTime().getHomeTeam()));
 
         //
-        matchViewHolder.getUtcDate().setText(status);
-        matchViewHolder.getLastUpdated().setText(lastUpdated);
-        matchViewHolder.getStatus().setText(status);
-
+       // matchViewHolder.getUtcDate().setText(utcDate);
+//        matchViewHolder.getLastUpdated().setText(lastUpdated);
+       // matchViewHolder.getStatus().setText(status);
+      //  matchViewHolder.getCurrrentMatchday().setText(currentMatchday);
 
     }
 
