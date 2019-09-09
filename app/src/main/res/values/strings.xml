@@ -29,12 +29,12 @@
     <string name="D">D</string>
     <string name="P">P</string>
 
-// spinner content
+    // spinner content
     <string-array name="season">
         <item>current season</item>
         <item>last season</item>
     </string-array>
 
-
+    <string name="matchday_subtitle">Matchday %d</string>
 
 </resources>

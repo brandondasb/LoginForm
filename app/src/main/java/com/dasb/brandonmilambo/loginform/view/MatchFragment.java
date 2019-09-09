@@ -18,6 +18,8 @@ public class MatchFragment extends BaseNavFragment {
 
     private MatchPresenter matchPresenter;
 
+    private int currentMatchDay = 1;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,7 +41,6 @@ public class MatchFragment extends BaseNavFragment {
         @Override
         public void loadMatchesData(GsonMatchesResponse response) {
             matchPresenter.loadMatch(response.getMatches());
-
         }
     };
 }

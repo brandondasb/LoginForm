@@ -57,4 +57,7 @@ public class GsonMatch {
     public GsonMatchTeam getAwayTeam() {
         return awayTeam;
     }
+
+
+
 }

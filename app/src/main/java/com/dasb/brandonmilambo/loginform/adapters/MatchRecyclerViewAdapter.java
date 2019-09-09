@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.model.match.GsonMatch;
-import com.dasb.brandonmilambo.loginform.model.match.GsonSeason;
 import com.dasb.brandonmilambo.loginform.viewHolder.MatchViewHolder;
 
 import java.util.List;
@@ -17,12 +16,14 @@ import java.util.List;
 public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHolder> {
     private Context context;
     private List<GsonMatch> matchesData;
+    private boolean isLoading = true;
 
+    private static final int LOADING_CELL_TYPE = 0;
+    private static final int MATCH_DAY_CELL = 1;
 
     public MatchRecyclerViewAdapter(Context context, List<GsonMatch> matchesData) {
         this.context = context;
         this.matchesData = matchesData;
-
 
     }
 
@@ -39,6 +40,11 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHold
         return new MatchViewHolder(view);
     }
 
+//    @Override
+//    public int getItemViewType(int position) {
+//
+//    }
+
     @Override
     public void onBindViewHolder(@NonNull MatchViewHolder matchViewHolder, int position) {
 
@@ -50,7 +56,6 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHold
         String status = String.valueOf(gsonMatch.getStatus());
         String matchday = String.valueOf(gsonMatch.getMatchday());
         String lastUpdated = String.valueOf(gsonMatch.getLastUpdated());
-      //  String currentMatchday = String.valueOf(gsonMatch.getGsonSeason().getCurrentMatchDay());
 
 
         //binding to view holder
@@ -75,5 +80,9 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHold
     @Override
     public int getItemCount() {
         return matchesData.size();
+    }
+
+    public void setData(List<GsonMatch> matchData) {
+        isLoading = false;
     }
 }
