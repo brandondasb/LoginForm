@@ -5,43 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/teamcardShimmerViewContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:shimmer_auto_start="true">
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           >
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-            <include layout="@layout/list_item_team_card_place_holder"/>
-           <include layout="@layout/list_item_team_card_place_holder"/>
-
-       </LinearLayout>
-    </com.facebook.shimmer.ShimmerFrameLayout>
 
 
-    <android.support.constraint.ConstraintLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp">
@@ -52,7 +18,9 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="1"/>
+                tools:text="1"
+                android:background="@color/colorGrey"
+                android:textColor="@color/colorGrey"/>
 
             <TextView
                 android:id="@+id/nameTextView"
@@ -62,7 +30,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/positionTV"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="team  Name" />
+                tools:text="team  Name"
+                android:background="@color/colorGrey"
+                android:textColor="@color/colorGrey"
+                />
 
             <android.support.constraint.Guideline
                 android:id="@+id/guideline"
@@ -70,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="20dp"
-                app:layout_constraintGuide_percent="0.6" />
+                app:layout_constraintGuide_percent="0.6"
+                />
 
             <TextView
                 android:id="@+id/matchPlayedTextview"
@@ -80,7 +52,9 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@id/guideline"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="15" />
+                tools:text="15"
+                android:background="@color/colorGrey"
+                android:textColor="@color/colorGrey"/>
 
             <TextView
                 android:id="@+id/wonTextview"
@@ -90,7 +64,9 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/matchPlayedTextview"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="10" />
+                tools:text="10"
+                android:background="@color/colorGrey"
+                android:textColor="@color/colorGrey"/>
 
             <TextView
                 android:id="@+id/lostTextview"
@@ -100,7 +76,9 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/wonTextview"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="3" />
+                tools:text="3"
+                android:background="@color/colorGrey"
+                android:textColor="@color/colorGrey"/>
 
             <TextView
                 android:id="@+id/drawTextview"
@@ -110,7 +88,9 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/lostTextview"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="2" />
+                tools:text="2"
+                android:background="@color/colorGrey"
+                android:textColor="@color/colorGrey"/>
 
 
             <TextView
@@ -121,7 +101,9 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/drawTextview"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="37" />
+                tools:text="37"
+                android:background="@color/colorGrey"
+                android:textColor="@color/colorGrey"/>
 
             <TextView
                 android:id="@+id/lastUpdatedTV"
@@ -132,7 +114,9 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/pointsTextview"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="37" />
+                tools:text="37"
+                android:background="@color/colorGrey"
+                android:textColor="@color/colorGrey"/>
 
         </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

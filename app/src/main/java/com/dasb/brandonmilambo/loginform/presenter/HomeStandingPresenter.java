@@ -17,6 +17,7 @@ import com.dasb.brandonmilambo.loginform.interfaces.HomeStandingPresenterListene
 import com.dasb.brandonmilambo.loginform.model.table.GsonTeamStandings;
 import com.dasb.brandonmilambo.loginform.view.HomeFragment;
 import com.dasb.brandonmilambo.loginform.viewHolder.HomeFragmentViewHolder;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class HomeStandingPresenter {
     private HomeFragmentViewHolder viewHolder;
     private HomeFragment homeFragment;
     private HomeStandingPresenterListener homeStandingPresenterListener;
+    private ShimmerFrameLayout shimmerFrameLayout2;
 
     /**
      * create constuctor for the presenter and pass in the View and the listener as parameters.
@@ -52,7 +54,11 @@ public class HomeStandingPresenter {
 
         viewHolder.getRecyclerView().setLayoutManager(new LinearLayoutManager(context));
         final HomeStandingRecyclerViewAdapter homeStandingRecycleViewAdapter = new HomeStandingRecyclerViewAdapter(context, teamStandings);
+        viewHolder.getShimmerFrameLayout().stopShimmer();// stop shimmer
+        viewHolder.getShimmerFrameLayout().setVisibility(View.GONE);// hide shimmer frame
+        viewHolder.getRecyclerView().setVisibility(View.VISIBLE);//display the real data
         viewHolder.getRecyclerView().setAdapter(homeStandingRecycleViewAdapter);
+
 
     }
 

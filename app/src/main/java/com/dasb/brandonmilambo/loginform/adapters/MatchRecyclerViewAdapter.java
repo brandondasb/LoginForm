@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.model.match.GsonMatch;
 import com.dasb.brandonmilambo.loginform.viewHolder.MatchViewHolder;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHold
     private Context context;
     private List<GsonMatch> matchesData;
     private boolean isLoading = true;
+
+
 
     private static final int LOADING_CELL_TYPE = 0;
     private static final int MATCH_DAY_CELL = 1;
@@ -71,7 +74,7 @@ public class MatchRecyclerViewAdapter extends RecyclerView.Adapter<MatchViewHold
 
         //
        // matchViewHolder.getUtcDate().setText(utcDate);
-//        matchViewHolder.getLastUpdated().setText(lastUpdated);
+        //  matchViewHolder.getLastUpdated().setText(lastUpdated);
        // matchViewHolder.getStatus().setText(status);
       //  matchViewHolder.getCurrrentMatchday().setText(currentMatchday);
 

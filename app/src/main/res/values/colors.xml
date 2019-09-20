@@ -10,6 +10,9 @@
     <color name="colorSecondaryDark">#0069c0</color>
     <color name="colorSecondaryLight">#6ec6ff</color>
 
+    <!-- -->
+    <color name="colorGrey">#C0C0C0</color>
+
 
 
 </resources>

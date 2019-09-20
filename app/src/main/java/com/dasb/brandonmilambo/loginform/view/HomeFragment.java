@@ -16,9 +16,12 @@ import com.dasb.brandonmilambo.loginform.model.BottomNavState;
 import com.dasb.brandonmilambo.loginform.model.table.GsonStandingsResponse;
 import com.dasb.brandonmilambo.loginform.presenter.HomeStandingPresenter;
 import com.dasb.brandonmilambo.loginform.repo.FootballDataRepo;
+import com.facebook.shimmer.ShimmerFrameLayout;
+
 
 public class HomeFragment extends BaseNavFragment {
     private HomeStandingPresenter homeStandingPresenter;
+    private ShimmerFrameLayout shimmerFrameLayout2;
 
 
     @Nullable
@@ -34,6 +37,7 @@ public class HomeFragment extends BaseNavFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         updateBottomNavListener.updateBottomNav(BottomNavState.HOME);
+        shimmerFrameLayout2 = getView().findViewById(R.id.teamcardShimmerViewContainer); //test
 
 
 
@@ -41,7 +45,19 @@ public class HomeFragment extends BaseNavFragment {
         footballDataRepo.getStandingFordId("2021", "2019", standingCallback);
         Toast.makeText(this.getActivity(), "last season test", Toast.LENGTH_LONG);
 
+
         homeStandingPresenter = new HomeStandingPresenter(view, new HomeFragmentListener(getContext(), footballDataRepo, standingCallback));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
     }
 
     private StandingCallback standingCallback = new StandingCallback() {
@@ -81,5 +97,8 @@ class HomeFragmentListener implements HomeStandingPresenterListener {
                 Toast.makeText(context, "season 2018/19", Toast.LENGTH_LONG).show();
                 break;
         }
+
+
     }
+
 }
