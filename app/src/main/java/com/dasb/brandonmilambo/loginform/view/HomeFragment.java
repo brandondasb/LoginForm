@@ -37,7 +37,6 @@ public class HomeFragment extends BaseNavFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         updateBottomNavListener.updateBottomNav(BottomNavState.HOME);
-        shimmerFrameLayout2 = getView().findViewById(R.id.teamcardShimmerViewContainer); //test
 
 
 
@@ -64,7 +63,7 @@ public class HomeFragment extends BaseNavFragment {
 
         @Override
         public void loadStandingData(GsonStandingsResponse response) {
-            homeStandingPresenter.Load(response.getStandings().get(0).getTable());
+            homeStandingPresenter.load(response.getStandings().get(0).getTable());
         }
     };
 }

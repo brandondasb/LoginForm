@@ -17,7 +17,6 @@ import com.dasb.brandonmilambo.loginform.interfaces.HomeStandingPresenterListene
 import com.dasb.brandonmilambo.loginform.model.table.GsonTeamStandings;
 import com.dasb.brandonmilambo.loginform.view.HomeFragment;
 import com.dasb.brandonmilambo.loginform.viewHolder.HomeFragmentViewHolder;
-import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 
@@ -26,43 +25,44 @@ public class HomeStandingPresenter {
     private HomeFragmentViewHolder viewHolder;
     private HomeFragment homeFragment;
     private HomeStandingPresenterListener homeStandingPresenterListener;
-    private ShimmerFrameLayout shimmerFrameLayout2;
+    private HomeStandingRecyclerViewAdapter homeStandingRecyclerViewAdapter;
 
     /**
      * create constuctor for the presenter and pass in the View and the listener as parameters.
+     *
      * @param view
      * @param listener
-     *
      */
     public HomeStandingPresenter(View view, HomeStandingPresenterListener listener) {
         viewHolder = new HomeFragmentViewHolder(view);
         context = view.getContext();
+
+        viewHolder.getRecyclerView().setLayoutManager(new LinearLayoutManager(context));
+        homeStandingRecyclerViewAdapter = new HomeStandingRecyclerViewAdapter(context);
+        viewHolder.getRecyclerView().setAdapter(homeStandingRecyclerViewAdapter);
+
+
         this.homeStandingPresenterListener = listener;
         configureSpinner();
     }
 
     /**
-     * Load method  loads the list of gson standing,
+     * load method  loads the list of gson standing,
      * user viewHolder to get recyclerView
      * set layout manager
      * pass list of teams to the recycleView adapter.
      * pass the adapter to the recycleView.
+     *
      * @param teamStandings
      */
-    public void Load(List<GsonTeamStandings> teamStandings) {
+    public void load(List<GsonTeamStandings> teamStandings) {
 
-
-        viewHolder.getRecyclerView().setLayoutManager(new LinearLayoutManager(context));
-        final HomeStandingRecyclerViewAdapter homeStandingRecycleViewAdapter = new HomeStandingRecyclerViewAdapter(context, teamStandings);
-        viewHolder.getShimmerFrameLayout().stopShimmer();// stop shimmer
-        viewHolder.getShimmerFrameLayout().setVisibility(View.GONE);// hide shimmer frame
-        viewHolder.getRecyclerView().setVisibility(View.VISIBLE);//display the real data
-        viewHolder.getRecyclerView().setAdapter(homeStandingRecycleViewAdapter);
-
+        homeStandingRecyclerViewAdapter.setData(teamStandings);
 
     }
 
-    /**Repopulate the data every time the item is selected.
+    /**
+     * Repopulate the data every time the item is selected.
      * setting up the Spinner,
      * assign array
      * link to XML layout

@@ -1,37 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/holo_red_light"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:elevation="50dp">
-
-        <TextView
-            android:id="@+id/tv_spinner"
-            android:layout_width="88dp"
-            android:layout_height="17dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Select season"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    android:orientation="vertical" >
 
         <Spinner
             android:id="@+id/spinnerSeason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-
             android:layout_marginStart="8dp"
-            app:layout_constraintStart_toEndOf="@+id/tv_spinner"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -40,19 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_spinner"
+            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
             tools:text="1" />
-
-        <TextView
-            android:id="@+id/nameTextViewTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/positionTV"
-            app:layout_constraintTop_toBottomOf="@+id/tv_spinner"
-        android:text="@string/Club"
-            />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
@@ -69,7 +41,7 @@
             app:layout_constraintEnd_toStartOf="@id/wonTextviewTitle"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tv_spinner"
+            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
             android:text="@string/MP"
             />
 
@@ -79,8 +51,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/lostTextviewTitle"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/matchPlayedTextviewTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tv_spinner"
+            app:layout_constraintStart_toEndOf="@id/matchPlayedTextviewTitle"
+            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
             android:text="@string/W"  />
 
         <TextView
@@ -89,8 +61,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/drawTextviewTitle"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/wonTextviewTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tv_spinner"
+            app:layout_constraintStart_toEndOf="@id/wonTextviewTitle"
+            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
             android:text="@string/L"  />
 
         <TextView
@@ -99,8 +71,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/pointsTextviewTitle"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/lostTextviewTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tv_spinner"
+            app:layout_constraintStart_toEndOf="@id/lostTextviewTitle"
+            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
             android:text="@string/D"  />
 
 
@@ -110,18 +82,16 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/drawTextviewTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tv_spinner"
+            app:layout_constraintStart_toEndOf="@id/drawTextviewTitle"
+            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
             android:text="@string/P" />
-
-        ></android.support.constraint.ConstraintLayout>
-
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/home_fragment_recycleView">   </android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/home_fragment_recycleView" />
 
 
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
