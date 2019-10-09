@@ -2,6 +2,7 @@ package com.dasb.brandonmilambo.loginform.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,6 +96,26 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
             teamViewHolder.getLost().setText(lost);
             teamViewHolder.getDraw().setText(draw);
             teamViewHolder.getPoints().setText(points);
+
+            if (position <= 2) {
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top3));
+
+
+            } else if (position == 3) {
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top4));
+
+            } else if (position == 4) {
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top5));
+
+            } else if (position == 5) {
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top6));
+
+            } else if (position >= 17) {
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.relegationZone));
+
+            }
+
+
         } else {
 
 
@@ -102,4 +123,7 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
 
 
     }
+
+
+
 }

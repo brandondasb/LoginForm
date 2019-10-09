@@ -1,6 +1,7 @@
 package com.dasb.brandonmilambo.loginform.viewHolder;
 
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class TeamViewHolder extends ViewHolder {
     private TextView lost;
     private TextView draw;
     private TextView points;
+    private CardView teamListItemCardView;
 
     public TeamViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -27,6 +29,7 @@ public class TeamViewHolder extends ViewHolder {
         this.lost = itemView.findViewById(R.id.lostTextview);
         this.draw = itemView.findViewById(R.id.drawTextview);
         this.points = itemView.findViewById(R.id.pointsTextview);
+        this.teamListItemCardView = itemView.findViewById(R.id.list_item_card_view);
 
 
     }
@@ -57,5 +60,9 @@ public class TeamViewHolder extends ViewHolder {
 
     public TextView getPoints() {
         return points;
+    }
+
+    public CardView getTeamListItemCardView() {
+        return teamListItemCardView;
     }
 }

@@ -13,6 +13,10 @@
     <!-- -->
     <color name="colorGrey">#C0C0C0</color>
 
-
-
+    <!-- Table colors -->
+    <color name="top3">#5928B463</color>
+    <color name="top4">#59208149</color>
+    <color name="top5">#593498DB</color>
+    <color name="top6">#5921618C</color>
+    <color name="relegationZone">#59FA390F</color>
 </resources>

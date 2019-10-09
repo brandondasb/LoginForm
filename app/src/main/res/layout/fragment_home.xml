@@ -1,97 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/holo_red_light"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        >
 
         <Spinner
             android:id="@+id/spinnerSeason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/positionTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
-            tools:text="1" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp"
-            app:layout_constraintGuide_percent="0.6" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.6"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/matchPlayedTextviewTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/teamstanding_cell_max_width"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/MP"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/wonTextviewTitle"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/guideline"
-            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
-            android:text="@string/MP"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/wonTextviewTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/teamstanding_cell_max_width"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="@string/W"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/lostTextviewTitle"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/matchPlayedTextviewTitle"
-            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
-            android:text="@string/W"  />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lostTextviewTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/teamstanding_cell_max_width"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="@string/L"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/drawTextviewTitle"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/wonTextviewTitle"
-            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
-            android:text="@string/L"  />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/drawTextviewTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/teamstanding_cell_max_width"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="@string/D"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/pointsTextviewTitle"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/lostTextviewTitle"
-            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
-            android:text="@string/D"  />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
             android:id="@+id/pointsTextviewTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/teamstanding_cell_max_width"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="@string/P"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/drawTextviewTitle"
-            app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
-            android:text="@string/P" />
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/home_fragment_recycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spinnerSeason"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/home_fragment_recycleView" />
+        app:layout_constraintTop_toBottomOf="@id/spinnerSeason" />
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
