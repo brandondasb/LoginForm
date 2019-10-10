@@ -13,6 +13,8 @@ import com.dasb.brandonmilambo.loginform.model.table.GsonTeamStandings;
 import com.dasb.brandonmilambo.loginform.viewHolder.LoadingTeamViewHolder;
 import com.dasb.brandonmilambo.loginform.viewHolder.TeamViewHolder;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -52,7 +54,10 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
             return TEAM_CELL;
         }
     }
-
+/**
+ * Depeending on the ViewType create the correct XML view. if data isnot loaded yet show placeholder else
+ * show team card
+ * **/
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
@@ -88,8 +93,23 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
             String goalAgainst = String.valueOf(teamStanding.getGoalsAgainst());
             String goalDifference = String.valueOf(teamStanding.getGoalDifference());
 
+            /**
+             * Binding data
+             **/
 
             teamViewHolder.getPostion().setText(teamPosition);
+
+            /** ******************************************shorten some text
+             *
+             * if the characters are over 20 I decide to only show the first word.
+             * in the future mabye this action be done at a higher level so it sacross the entire app.
+             */
+            if (teamname.length()> 20){
+              // teamname = teamname.substring(0,19 );
+               String[] wordsArray = teamname.split(" ");// reg expression put a white space. in the future maybe this can be d
+               teamname = wordsArray[0];
+            }
+
             teamViewHolder.getNameTextView().setText(teamname);
             teamViewHolder.getMatchPlayed().setText(playedGames);
             teamViewHolder.getWon().setText(won);
@@ -97,6 +117,8 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
             teamViewHolder.getDraw().setText(draw);
             teamViewHolder.getPoints().setText(points);
 
+            /** adding Color to the league table based
+             * positioning**/
             if (position <= 2) {
                 teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top3));
 
@@ -114,6 +136,8 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
                 teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.relegationZone));
 
             }
+
+
 
 
         } else {

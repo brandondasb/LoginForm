@@ -29,6 +29,11 @@ public class HomeStandingPresenter {
 
     /**
      * create constuctor for the presenter and pass in the View and the listener as parameters.
+     * set layout manager
+     * pass list of teams to the recycleView adapter.
+     * pass the adapter to the recycleView.set layout manager
+     * pass list of teams to the recycleView adapter.
+     * pass the adapter to the recycleView.
      *
      * @param view
      * @param listener
@@ -50,8 +55,6 @@ public class HomeStandingPresenter {
      * load method  loads the list of gson standing,
      * user viewHolder to get recyclerView
      * set layout manager
-     * pass list of teams to the recycleView adapter.
-     * pass the adapter to the recycleView.
      *
      * @param teamStandings
      */
