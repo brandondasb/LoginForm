@@ -15,7 +15,6 @@ import com.dasb.brandonmilambo.loginform.R;
 import com.dasb.brandonmilambo.loginform.adapters.HomeStandingRecyclerViewAdapter;
 import com.dasb.brandonmilambo.loginform.interfaces.HomeStandingPresenterListener;
 import com.dasb.brandonmilambo.loginform.model.table.GsonTeamStandings;
-import com.dasb.brandonmilambo.loginform.view.HomeFragment;
 import com.dasb.brandonmilambo.loginform.viewHolder.HomeFragmentViewHolder;
 
 import java.util.List;
@@ -23,7 +22,6 @@ import java.util.List;
 public class HomeStandingPresenter {
     private Context context;
     private HomeFragmentViewHolder viewHolder;
-    private HomeFragment homeFragment;
     private HomeStandingPresenterListener homeStandingPresenterListener;
     private HomeStandingRecyclerViewAdapter homeStandingRecyclerViewAdapter;
 

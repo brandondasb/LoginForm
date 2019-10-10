@@ -5,9 +5,8 @@ public class GsonMatch {
     private int id;
     /**
      * creating an GsonSeason object.
-     *
+     * <p>
      * I initially created a GsonSeason team class containing the @Param id,startDate,endDate,currentMatchDay:
-     *
      */
     private GsonScore score;
 
@@ -16,7 +15,7 @@ public class GsonMatch {
     private String matchday;
     private String lastUpdated;
 
-   // Creating the 3 below as separate Object due teh JSon structure
+    // Creating the 3 below as separate Object due teh JSon structure
 
     private GsonSeason gsonSeason;
     private GsonMatchTeam homeTeam;
@@ -57,7 +56,6 @@ public class GsonMatch {
     public GsonMatchTeam getAwayTeam() {
         return awayTeam;
     }
-
 
 
 }

@@ -10,35 +10,40 @@ import com.dasb.brandonmilambo.loginform.viewHolder.MatchFragmentViewHolder;
 
 import java.util.List;
 
-/** Presenter
+/**
+ * Presenter
  * Responsible for handling actions form the @Param and Updating the UI
  * as needed.
- *
- * **/
+ **/
 public class MatchPresenter {
     private Context context;
     private MatchFragmentViewHolder viewHolder;
+    private MatchRecyclerViewAdapter matchRecyclerViewAdapter;
 
     /**
      * create constructor for the presenter to pass in thew View
-     * @param view
-     *  may  need listener later
      *
-     * **/
+     * @param view may  need listener later
+     **/
     public MatchPresenter(View view) {
-        context = view.getContext();
         viewHolder = new MatchFragmentViewHolder(view);
+        context = view.getContext();
+
+        viewHolder.getMatchRecyclerView().setLayoutManager(new LinearLayoutManager(context));
+        matchRecyclerViewAdapter = new MatchRecyclerViewAdapter(context);
+        viewHolder.getMatchRecyclerView().setAdapter(matchRecyclerViewAdapter);
+
     }
 
     /**
      * Loag Gsonlist of matches
+     *
      * @param matches
      */
-    public void loadMatch(List<GsonMatch> matches){
+    public void loadMatch(List<GsonMatch> matches) {
 
-        viewHolder.getMatchRecyclerView().setLayoutManager(new LinearLayoutManager(context));
-        final MatchRecyclerViewAdapter matchRecyclerViewAdapter = new MatchRecyclerViewAdapter(context, matches);
-        viewHolder.getMatchRecyclerView().setAdapter(matchRecyclerViewAdapter);
+        //final MatchRecyclerViewAdapter matchRecyclerViewAdapter = new MatchRecyclerViewAdapter(context);
+        matchRecyclerViewAdapter.setMatchesData(matches);
 
     }
 }

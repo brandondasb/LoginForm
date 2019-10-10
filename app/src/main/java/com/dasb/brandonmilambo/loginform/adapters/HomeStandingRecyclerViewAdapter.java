@@ -13,16 +13,16 @@ import com.dasb.brandonmilambo.loginform.model.table.GsonTeamStandings;
 import com.dasb.brandonmilambo.loginform.viewHolder.LoadingTeamViewHolder;
 import com.dasb.brandonmilambo.loginform.viewHolder.TeamViewHolder;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
+
 import java.util.List;
 
 public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context context;
     private List<GsonTeamStandings> teamStandingData;
-    private static final int LOADING_CELL_COUNT = 20;
+
     private boolean isLoading = true;
+    private static final int LOADING_CELL_COUNT = 20;
     private static final int LOADING_CELL_TYPE = 0;
     private static final int TEAM_CELL = 1;
 
@@ -54,10 +54,11 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
             return TEAM_CELL;
         }
     }
-/**
- * Depeending on the ViewType create the correct XML view. if data isnot loaded yet show placeholder else
- * show team card
- * **/
+
+    /**
+     * Depending on the ViewType create the correct XML view. if data isnot loaded yet show placeholder else
+     * show team card
+     **/
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
@@ -104,10 +105,10 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
              * if the characters are over 20 I decide to only show the first word.
              * in the future mabye this action be done at a higher level so it sacross the entire app.
              */
-            if (teamname.length()> 20){
-              // teamname = teamname.substring(0,19 );
-               String[] wordsArray = teamname.split(" ");// reg expression put a white space. in the future maybe this can be d
-               teamname = wordsArray[0];
+            if (teamname.length() > 20) {
+                // teamname = teamname.substring(0,19 );Ò
+                String[] wordsArray = teamname.split(" ");// reg expression put a white space. in the future maybe this can be d
+                teamname = wordsArray[0];
             }
 
             teamViewHolder.getNameTextView().setText(teamname);
@@ -120,24 +121,22 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
             /** adding Color to the league table based
              * positioning**/
             if (position <= 2) {
-                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top3));
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context, R.color.top3));
 
 
             } else if (position == 3) {
-                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top4));
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context, R.color.top4));
 
             } else if (position == 4) {
-                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top5));
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context, R.color.top5));
 
             } else if (position == 5) {
-                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.top6));
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context, R.color.top6));
 
             } else if (position >= 17) {
-                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context,R.color.relegationZone));
+                teamViewHolder.getTeamListItemCardView().setCardBackgroundColor(ContextCompat.getColor(context, R.color.relegationZone));
 
             }
-
-
 
 
         } else {
@@ -147,7 +146,6 @@ public class HomeStandingRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
 
 
     }
-
 
 
 }

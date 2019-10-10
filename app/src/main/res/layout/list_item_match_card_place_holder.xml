@@ -7,91 +7,90 @@
     android:layout_height="wrap_content"
     android:padding="8dp">
 
-
-    <android.support.constraint.ConstraintLayout
+    <com.facebook.shimmer.ShimmerFrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:shimmer_auto_start="true">
 
-        <TextView
-            android:id="@+id/matchdayLabelTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="matchday:"
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            app:layout_constraintEnd_toStartOf="@+id/matchdayTextView"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/matchdayTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="0"
-            app:layout_constraintEnd_toEndOf="parent"
+            <View
+                android:id="@+id/matchdayTextView"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
 
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorGrey"
 
-        <TextView
-            android:id="@+id/homeTeamTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            android:text="HOME"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent" />
+            <View
+                android:id="@+id/homeTeamTextView"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
 
-        <TextView
-            android:id="@+id/scoreHomeFullTimeTextView"
-            android:layout_width="8dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginBottom="8dp"
-            android:text="0"
-            app:layout_constraintBottom_toBottomOf="parent"
-
-            app:layout_constraintEnd_toStartOf="@id/guideline"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/scoreAwayFullTimeTextView"
-            android:layout_width="8dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginBottom="8dp"
-            android:text="0"
-            app:layout_constraintStart_toEndOf="@id/guideline"
-            app:layout_constraintTop_toTopOf="parent"
-
-            app:layout_constraintVertical_bias="0.0" />
+            <View
+                android:id="@+id/scoreHomeFullTimeTextView"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
 
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
 
-        <TextView
-            android:id="@+id/awayTeamTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="away"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/scoreAwayFullTimeTextView"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGrey"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <View
+                android:id="@+id/awayTeamTextView"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="48dp"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+        </android.support.constraint.ConstraintLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </android.support.v7.widget.CardView>

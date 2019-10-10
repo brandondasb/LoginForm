@@ -1,7 +1,7 @@
 package com.dasb.brandonmilambo.loginform.interfaces;
 
 /**
- * Defines the contract between the the view {@link com.dasb.brandonmilambo.loginform.view.HomeFragment}
+ * Defines the contract between the  view {@link com.dasb.brandonmilambo.loginform.view.HomeFragment}
  * and the Presenter {@link com.dasb.brandonmilambo.loginform.presenter.HomeStandingPresenter}
  *
  */
