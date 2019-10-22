@@ -12,7 +12,7 @@ import com.dasb.brandonmilambo.loginform.interfaces.MatchesCallback;
 import com.dasb.brandonmilambo.loginform.model.BottomNavState;
 import com.dasb.brandonmilambo.loginform.model.match.GsonMatchesResponse;
 import com.dasb.brandonmilambo.loginform.presenter.MatchPresenter;
-import com.dasb.brandonmilambo.loginform.repo.FootballDataRepo;
+import com.dasb.brandonmilambo.loginform.repo.FixtureFootballDataRepo;
 
 public class MatchFragment extends BaseNavFragment {
 
@@ -32,8 +32,8 @@ public class MatchFragment extends BaseNavFragment {
         super.onViewCreated(view, savedInstanceState);
         updateBottomNavListener.updateBottomNav(BottomNavState.MATCH);
         matchPresenter = new MatchPresenter(view);
-        FootballDataRepo footballDataRepo = new FootballDataRepo();
-        footballDataRepo.getMatchDay("2021", matchesCallback);
+        FixtureFootballDataRepo footballDataRepo = new FixtureFootballDataRepo();
+        footballDataRepo.getCurrentFixture();
 
     }
 
