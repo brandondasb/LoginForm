@@ -1,4 +1,5 @@
-package com.dasb.brandonmilambo.loginform.learning;
+package com.dasb.brandonmilambo.loginform.learning.equalsAndAshcode;
+
 
 import java.util.Objects;
 
@@ -11,8 +12,9 @@ public class Person {
         this.forename = forename;
         this.surname = surname;
     }
-    public Person(String forename,String surname,int age){
-        this(forename,surname );
+
+    public Person(String forename, String surname, int age) {
+        this(forename, surname);
         this.age = age;
     }
 
@@ -45,6 +47,9 @@ public class Person {
 
     @Override
     public String toString() {
-        return forename+surname+age;
+        return forename + surname + age;
     }
 }
+
+
+
