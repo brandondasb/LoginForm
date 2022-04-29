@@ -20,8 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class FixtureFootballDataRepo {
-    private static final String BASE_URL = "https://server1.api-football.com/";
-    private static final String AUTH_TOKEN = "5e70f85ab4ccda4eefd6e7914aaff466";
+    private static final String BASE_URL = "https://api-football-v1.p.rapidapi.com";
+    private static final String AUTH_TOKEN = "f32ac7167cmshd653eb0e707d48fp1b8ee6jsnd3d53c56307c";
 
     private FootballDataFixtureAPI footballDataFixtureAPI;
 

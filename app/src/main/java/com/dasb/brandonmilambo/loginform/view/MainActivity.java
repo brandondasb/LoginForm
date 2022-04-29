@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
-        //bottom nav declaration
-//        fragmentManager.addOnBackStackChangedListener(getBackStackChangedListener());
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);

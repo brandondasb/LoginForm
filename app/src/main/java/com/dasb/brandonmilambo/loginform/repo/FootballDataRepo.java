@@ -28,7 +28,6 @@ public class FootballDataRepo {
 
     public FootballDataRepo() {
         configureRetroFit();
-
     }
 
     public void getStandingFordId(String id, String season, final StandingCallback standingCallback) {

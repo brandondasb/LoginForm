@@ -37,14 +37,9 @@ public class HomeFragment extends BaseNavFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         updateBottomNavListener.updateBottomNav(BottomNavState.HOME);
-
-
-
         FootballDataRepo footballDataRepo = new FootballDataRepo();
         footballDataRepo.getStandingFordId("2021", "2019", standingCallback);
         Toast.makeText(this.getActivity(), "last season test", Toast.LENGTH_LONG);
-
-
         homeStandingPresenter = new HomeStandingPresenter(view, new HomeFragmentListener(getContext(), footballDataRepo, standingCallback));
     }
 

@@ -1,7 +1,7 @@
 package com.dasb.brandonmilambo.loginform.model.table;
 
 public class GsonTeamStandings {
-    private int position ;
+    private int position;
     private GsonTableTeam team;
     private int playedGames;
     private int won;
